@@ -1,0 +1,1 @@
+https://social-media-authenticat-762a1.firebaseapp.com/__/auth/handler

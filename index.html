@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyAqaZULHKKo7StcgvFJ1PB6HucKjnX308k",
+            authDomain: "social-media-authenticat-762a1.firebaseapp.com",
+            databaseURL: "https://social-media-authenticat-762a1.firebaseio.com",
+            projectId: "social-media-authenticat-762a1",
+            storageBucket: "social-media-authenticat-762a1.appspot.com",
+            messagingSenderId: "225813833977",
+            appId: "1:225813833977:web:d11a3a587426a8e4ca9a28",
+            measurementId: "G-8ZNLZKP41F"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+    </script>
+</head>
+
+<body>
+    <button onclick="fblogin">Facebook login</button>
+
+
+    <script>
+        const fblogin = () => {
+            var provider = new firebase.auth.FacebookAuthProvider();
+            firebase.auth().signInWithPopup(provider)
+                .then(function (result) {
+                    var token = result.credential.accessToken;
+                    var user = result.user;
+                    console.log("user==>", user)
+                }).catch(function (error) {
+                    console.log(error.message)
+                });
+        }
+    </script>
+    <script src="app.js">
+
+    </script>
+</body>
+
+</html>
